@@ -11,12 +11,18 @@
 
 ## Preview
 
+### 程序运行
+
+1、输入带查询的文件路径。 
+2、输入你想要查询的单词。 
+3、输出查询结果。   
+4、go to 2. 
 ### 程序演示
 
 以下为使用and作为查询单词的输出结果，仅截取最后部分。  
 
 <div align="center">
-	<img src="./sample/and.png" width="550">
+	<img src="./sample/and.jpg" width="550">
 </div>
 
 ### 程序结构
@@ -30,7 +36,7 @@ EP1负责程序主体，持有三个方法，除作为入口的main外，分别�
 
 本程序对处理逻辑的Judger与Resolver进行了测试，结果与预期一致。  
 <div align="center">
-	<img src="./sample/test.png" width="550">
+	<img src="./sample/test.jpg" width="550">
 </div>
 
 ## 依赖
