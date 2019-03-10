@@ -11,38 +11,38 @@
 
 ## Preview
 
-### OpenFonts for Chinese
+### 程序演示
 
-中文字体方面，选择了[思源黑体](https://github.com/adobe-fonts/source-han-sans)和[思源宋体](https://github.com/adobe-fonts/source-han-serif)，是目前比较流行的开源字体选择。
-
-<div align="center">
-	<img src="./OpenFonts.Chinese/sample-image.png" width="550">
-</div>
-
-### OpenFonts
-
-在上游 repo 中，作者选择了 [Lato](https://fonts.google.com/specimen/Lato) 和 [Raleway](https://fonts.google.com/specimen/Raleway)。个人并不是很喜欢 Raleway 字体中 `W` 的形状，因此选择了更换了 [source-sans-pro](https://github.com/adobe-fonts/source-sans-pro)，而为了配套，将 Lato 更换成了 [source-serif-pro](https://github.com/adobe-fonts/source-serif-pro)。
-
-如果你想自己选择字体，推荐阅读 [Resume: A Tale of Desire, Intrigue, and Formatting](http://www.zackgrossbart.com/hackito/resume/)，这篇文章列举了很多开源的字体选择。
+以下为使用and作为查询单词的输出结果，仅截取最后部分。  
 
 <div align="center">
-	<img src="./OpenFonts/sample-image.png" width="550">
+	<img src="./sample/and.png" width="550">
 </div>
 
-### MacFonts
+### 程序结构
 
-由于机器原因不维护该版本模板，请前往[上游](https://github.com/deedy/Deedy-Resume/tree/master/MacFonts)查看。
+本程序由三个部分组成  
+Judger负责判断单词的性质，持有两个方法，分别判断单词是否为数字，单词是否为新文章标识符。  
+Resolver负责对于单词进行解析重组，持有两个方法，分别将单词的标点进行清洗，行拆分为单词组。  
+EP1负责程序主体，持有三个方法，除作为入口的main外，分别处理程序的解析部分与查询部分。
 
-## Dependencies
+### 程序测试
 
-1. Compiles only with **XeTeX** and required **BibTex** for compiling publications and the .bib filetype.
+本程序对处理逻辑的Judger与Resolver进行了测试，结果与预期一致。  
+<div align="center">
+	<img src="./sample/test.png" width="550">
+</div>
 
-## Known Issues:
+## 依赖
 
-1. Hacky space on the first bullet point on the second column.
-1. Hacky redefinition of \refname to omit 'References' text for publications in the MacFonts version.
+JB idea 2018.3  
+Junit 4  
+Java 9  
+
+## 文档
+
+函数使用方法见项目内部注释。  
 
 ## 致谢
 
-* 感谢 [Deedy-Resume](https://github.com/deedydas/Deedy-Resume) 提供的模板主体
-* 感谢 [adobe-fonts](https://github.com/adobe-fonts) 的开源字体[思源黑体](https://github.com/adobe-fonts/source-han-sans)，[思源宋体](https://github.com/adobe-fonts/source-han-serif)，[source-sans-pro](https://github.com/adobe-fonts/source-sans-pro) 和 [source-serif-pro](https://github.com/adobe-fonts/source-serif-pro)
+* 感谢 我自己提供的C++源代码
