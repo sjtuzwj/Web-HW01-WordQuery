@@ -8,6 +8,7 @@
 ## 项目历史
 
 原程序使用c++，移植至java版本后，作为maven项目，添加了Junit的单元测试。
+（开源放github上的应该不需要maven打包吧...）
 
 ## Preview
 
