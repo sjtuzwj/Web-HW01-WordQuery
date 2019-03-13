@@ -40,11 +40,18 @@ public class EP1 {
     {
         Scanner in = new Scanner(System.in);
         String filename =in.next();
-        ParseArticle(filename);
+        ArrayList<ArrayList<ArrayList<String>>> global=ParseArticle(filename);
+        String input;
+        Scanner in = new Scanner(System.in);
+        while (true)
+        {
+            input = in.next();
+            input(global,input);
+        }
     }
 
 
-    public static void ParseArticle(String filename)
+    public static ArrayList<ArrayList<ArrayList<String>>> ParseArticle(String filename)
     /**
      * 本函数为流程主体，分别进行了对文件的解析，并响应用户对单词的查询
      *
@@ -53,12 +60,6 @@ public class EP1 {
     {
         ArrayList<ArrayList<ArrayList<String>>> global = new ArrayList<ArrayList<ArrayList<String>>>();
         Resolver.readFromText(global, filename);
-        String input;
-        Scanner in = new Scanner(System.in);
-        while (true)
-        {
-            input = in.next();
-            input(global,input);
-        }
+        return global;
     }
 }
