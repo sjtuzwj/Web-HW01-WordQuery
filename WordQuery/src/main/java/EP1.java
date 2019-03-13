@@ -53,7 +53,7 @@ public class EP1 {
 
     public static ArrayList<ArrayList<ArrayList<String>>> ParseArticle(String filename)
     /**
-     * 本函数为流程主体，分别进行了对文件的解析，并响应用户对单词的查询
+     * 本函数为进行了对文件的解析并返回解析结果
      *
      * @param  filename String 待解析的文件
      */
