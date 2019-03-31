@@ -21,8 +21,6 @@
 值得注意的是，左图中清华大学的包普遍具有接近的大小，能在极短时间内接收完成，而右图交大的包则存在部分的害群之马。   
 <div align="left">
 	<img src="./sample/tsinghua.JPG" width="350">
-</div>
-<div align="left">
 	<img src="./sample/picture.JPG" width="350">
 </div>
 这一现象导致了非常严重的后果，如在某一段时间窗口，一张图片几乎占用了所有的网络开销，从而减缓了整体的加载。
