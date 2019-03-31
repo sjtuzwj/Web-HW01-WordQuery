@@ -7,10 +7,10 @@
 交大首页的loading时间相对较少，仅190.6ms，但实际总加载时间很长，约7s，主要时间开销为渲染。
 清华大学的loading时间为121.8ms，相比之下总加载时间仅为1s。
 <div align="left">
-	<img src="./sample/sj.JPG" width="550">
+	<img src="./sample/sj.JPG" width="450">
 </div>
 <div align="right">
-	<img src="./sample/th.JPG" width="550">
+	<img src="./sample/th.JPG" width="450">
 </div>
 ## 项目历史
 
