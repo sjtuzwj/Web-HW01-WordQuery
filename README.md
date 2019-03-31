@@ -22,7 +22,7 @@
 <div align="left">
 	<img src="./sample/tsinghua.JPG" width="350">
 </div>
-<div align="right">
+<div align="left">
 	<img src="./sample/picture.JPG" width="350">
 </div>
 这一现象导致了非常严重的后果，如在某一段时间窗口，一张图片几乎占用了所有的网络开销，从而减缓了整体的加载。
@@ -42,7 +42,7 @@
 <div align="left">
 	<img src="./sample/news.JPG" width="350">
 </div>
-<div align="right">
+<div align="left">
 	<img src="./sample/newssjtu.JPG" width="350">
 </div>
 ## 改进想法  
