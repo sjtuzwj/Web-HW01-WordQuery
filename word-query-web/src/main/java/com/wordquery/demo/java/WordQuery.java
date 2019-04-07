@@ -19,17 +19,17 @@ public class WordQuery {
                 {
                     if (input.equals(article.get(i).get(j)))
                     {
-                        res +="Line ";
+                        res +="\nLine ";
                         res +=i;
                         if (j!=0) {
-                            res+="Pre ";
+                            res+="\nPre ";
                             res+=article.get(i).get(j-1);
                         }
-                        res+="Cur ";
+                        res+="\nCur ";
                         res+=article.get(i).get(j);
                         if (j+1<article.get(i).size())
                         {
-                            res+="Suc ";
+                            res+="\nSuc ";
                             res+=article.get(i).get(j+1);
                         }
                         time++;
@@ -37,7 +37,7 @@ public class WordQuery {
                 }
             }
         }
-        res+="Time ";
+        res+="\nTime ";
         res+=String.valueOf(time);
         return res;
     }

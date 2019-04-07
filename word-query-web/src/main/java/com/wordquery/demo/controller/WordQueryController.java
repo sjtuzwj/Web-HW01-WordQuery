@@ -1,6 +1,12 @@
 package com.wordquery.demo.controller;
 
+import org.springframework.boot.jackson.JsonObjectSerializer;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.http.HttpStatus;
@@ -14,9 +20,11 @@ import com.wordquery.demo.java.WordQuery;
 
 
 @Controller
+@ResponseBody
 public class WordQueryController {
+    //就一个接口
     @RequestMapping(value="/wordquery",method= RequestMethod.GET)
-    public void wordquery(String input, Model model){
+    public String wordquery(String input){
         String queryRes =" ";
         ClassPathResource dictPath = new ClassPathResource("demo.txt");
         try {
@@ -27,6 +35,6 @@ public class WordQueryController {
         catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        model.addAttribute("query", queryRes.toString());
+        return  queryRes;
     }
 }
