@@ -43,12 +43,7 @@ mvnw clean test
 
 ### 程序演示
 
-以下为使用and作为查询单词的输出结果，仅截取最后部分。  
-
-<div align="center">
-	<img src="./sample/and.jpg" width="550">
-</div>
-以下是对于restful GET接口的演示，证明我们的接口正常运行
+以下是restful GET接口的演示，证明我们的接口正常运行
 <div align="center">
 	<img src="./sample/query.jpg" width="550">
 </div>
@@ -56,6 +51,7 @@ mvnw clean test
 <div align="center">
 	<img src="./sample/query-get.JPG" width="550">
 </div>
+
 ### 程序结构
 
 本程序由三个部分组成  
