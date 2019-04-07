@@ -29,8 +29,8 @@ mvn spring-boot:run
 mvnw clean test
 ```
 
-注：由于shakesphere太大了，因此采取了UBW作为demo文件。     
-再注： 并没有前端，所以输出也莫得了。  
+注：由于shakesphere.txt太大了，因此采取了Unlimited Blade Works作为demo文件。     
+再注： 并没有前端，所以输出也莫得了。只能直接访问api。
 1、在前端输入你想要查询的单词。   
 2、输出查询结果。     
 3、go to 1.   
