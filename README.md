@@ -21,12 +21,10 @@ mvn install
 
 - run: 
 ```
-cd word-ladder
 mvn spring-boot:run
 ```
 - test:
 ```
-cd word-ladder
 mvnw clean test
 ```
 
