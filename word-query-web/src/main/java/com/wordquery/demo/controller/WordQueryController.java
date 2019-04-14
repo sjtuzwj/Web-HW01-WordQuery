@@ -1,11 +1,9 @@
 package com.wordquery.demo.controller;
 
+import com.wordquery.demo.java.QueryResult;
 import org.springframework.boot.jackson.JsonObjectSerializer;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,22 +17,20 @@ import java.io.*;
 import com.wordquery.demo.java.WordQuery;
 
 
-@Controller
-@ResponseBody
+@RestController
+@RequestMapping(value="/wordquery")
 public class WordQueryController {
-    //就一个接口
-    @RequestMapping(value="/wordquery",method= RequestMethod.GET)
-    public String wordquery(String input){
-        String queryRes =" ";
+    @RequestMapping(value="/search/{input}",method= RequestMethod.GET)
+    public QueryResult search(@PathVariable String input){
+        WordQuery query = null;
         ClassPathResource dictPath = new ClassPathResource("demo.txt");
-        try {
+        try{
             String dictFilePath = dictPath.getFile().getAbsolutePath();
-            WordQuery query = new WordQuery(dictFilePath);
-            queryRes = query.interact(input);
+            query = new WordQuery(dictFilePath);
         }
         catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return  queryRes;
+        return query.interact(input);
     }
 }
