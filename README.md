@@ -54,10 +54,10 @@ mvnw clean test
 
 ### 项目结构
 
-- WordQueryController.java: 接口层
-- WordQuery.java: 逻辑层
-- *Tests.java: 单元测试
-
+- *Controller.java: 接口层
+- *.java: 逻辑层
+- *Tests.java: 测试
+- Config.java: 配置
 
 ### 程序演示
 
@@ -68,7 +68,7 @@ mvnw clean test
 
 ### 程序结构
 
-本程序由四个部分组成  
+本程序的local部分由四个部分组成  
 * Judger负责判断单词的性质，持有两个方法，分别判断单词是否为数字，单词是否为新文章标识符。  
 * Resolver负责对于单词进行解析重组，持有两个方法，分别将单词的标点进行清洗，行拆分为单词组。  
 * WordQuery负责程序主体，持有三个方法，构造函数进行文本读取，其余分别处理程序的交互部分与查询部分。
