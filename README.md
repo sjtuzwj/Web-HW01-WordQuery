@@ -11,6 +11,7 @@
 
 原程序使用c++，移植至java版本后，作为maven项目，添加了Junit的单元测试。  
 移植至Springboot，将System级的IO改成字符串接口，从而更加适应web环境。  
+添加了单元测试用例，并将api重构为对象序列化的json格式
 
 ## Preview
 
@@ -45,11 +46,7 @@ mvnw clean test
 
 以下是restful GET接口的演示，证明我们的接口正常运行
 <div align="center">
-	<img src="./sample/query.jpg" width="550">
-</div>
-但是格式有点不太对，应该是浏览器显示问题
-<div align="center">
-	<img src="./sample/query-get.JPG" width="550">
+	<img src="./sample/api.JPG" width="550">
 </div>
 
 ### 程序结构
