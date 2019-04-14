@@ -11,7 +11,7 @@
 
 原程序使用c++，移植至java版本后，作为maven项目，添加了Junit的单元测试。  
 移植至Springboot，将System级的IO改成字符串接口，从而更加适应web环境。  
-添加了单元测试用例，并将api重构为对象序列化的json格式
+添加了单元测试用例，并将上文字符串api重构为对象序列化的json格式
 
 ## Preview
 
@@ -51,10 +51,11 @@ mvnw clean test
 
 ### 程序结构
 
-本程序由三个部分组成  
+本程序由四个部分组成  
 * Judger负责判断单词的性质，持有两个方法，分别判断单词是否为数字，单词是否为新文章标识符。  
 * Resolver负责对于单词进行解析重组，持有两个方法，分别将单词的标点进行清洗，行拆分为单词组。  
 * WordQuery负责程序主体，持有三个方法，构造函数进行文本读取，其余分别处理程序的交互部分与查询部分。
+* QueryResult负责存储和序列化程序输出。输出格式为word+ context数组+ time
 
 ### 程序测试
 
@@ -67,7 +68,7 @@ mvnw clean test
 
 JB idea 2018.3  
 Junit 4  
-Java 9  
+Java 12  
 Spring Boot
 ## 文档
 
