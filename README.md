@@ -6,7 +6,7 @@
 
 ## 写在前面：第二次迭代
 * security：
-复用内置的login的html，在内存中创建了root的账户，并拦截所有请求，登录后即可正常访问
+复用内置的login的html，在内存中创建了root的账户，使用自定义明码decoder，并拦截所有请求，登录后即可正常访问
 * actuator:
 进行了接口测试并且修改了相关配置
 * 第一次迭代：gitworkflow
