@@ -80,11 +80,12 @@ mvnw clean test
 <div align="center">
 	<img src="./sample/test.jpg" width="550">
 </div>
-此外，通过mockMVC，对于接口进行了集成测试。测试了状态，内容等一系列正常
+此外，通过mockMVC，对于接口进行了集成测试。测试了状态，与部分内容与预期配置一致。
 
 <div align="center">
 	<img src="./sample/apitest.JPG" width="550">
 </div>
+
 ## 依赖
 
 JB idea 2018.3  
