@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WordQuery {
-    private  static ArrayList<ArrayList<ArrayList<String>>> global;
-    public static String interact(String input)
+    private static ArrayList<ArrayList<ArrayList<String>>> global;
+    public static QueryResult interact(String input)
     /**
      * 本函数为交互部分，根据用户输入的单词输出单词在文章中的行号、前置后置单词、与合集中出现数目。
+     * 重构后使用对象保存便于序列化
      */
     {
         int time=0;
-        String res="";
+        QueryResult tmp=new QueryResult(input);
+        String pre="",suc="";
         for (ArrayList<ArrayList<String>> article : global) {
             for(int i=0;i<article.size();i++)//line
             {
@@ -19,27 +21,24 @@ public class WordQuery {
                 {
                     if (input.equals(article.get(i).get(j)))
                     {
-                        res +="\nLine ";
-                        res +=i;
+
                         if (j!=0) {
-                            res+="\nPre ";
-                            res+=article.get(i).get(j-1);
+                            pre=article.get(i).get(j-1);
                         }
-                        res+="\nCur ";
-                        res+=article.get(i).get(j);
+                        else pre="";
                         if (j+1<article.get(i).size())
                         {
-                            res+="\nSuc ";
-                            res+=article.get(i).get(j+1);
+                            suc=article.get(i).get(j+1);
                         }
+                        else suc="";
                         time++;
+                        tmp.result.add(new QueryResultItem(i,pre,input,suc)) ;
                     }
                 }
             }
         }
-        res+="\nTime ";
-        res+=String.valueOf(time);
-        return res;
+        tmp.time=time;
+        return tmp;
     }
 
     public WordQuery(String filename)
@@ -50,7 +49,7 @@ public class WordQuery {
 
     public static ArrayList<ArrayList<ArrayList<String>>> ParseArticle(String filename)
     /**
-     * 本函数为进行了对文件的解析并返回解析结果
+     * 本函数进行了对文件的解析并返回解析结果
      *
      * @param  filename String 待解析的文件
      */

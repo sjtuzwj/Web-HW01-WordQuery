@@ -13,5 +13,6 @@ public class ResolverTest {
     public void resolveWord() {
         assertEquals("aa",Resolver.resolveWord("aa."));
         assertEquals(";aa",Resolver.resolveWord(";aa."));
+        assertEquals("",Resolver.resolveWord(""));
     }
 }
