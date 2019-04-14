@@ -46,7 +46,7 @@ mvnw clean test
 
 以下是restful GET接口的演示，证明我们的接口正常运行
 <div align="center">
-	<img src="./sample/api.JPG" width="550">
+	<img src="./sample/API.JPG" width="550">
 </div>
 
 ### 程序结构
