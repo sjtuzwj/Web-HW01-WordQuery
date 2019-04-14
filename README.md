@@ -63,6 +63,7 @@ mvnw clean test
 <div align="center">
 	<img src="./sample/test.jpg" width="550">
 </div>
+此外，通过mockMVC，对于接口进行了集成测试
 
 ## 依赖
 
