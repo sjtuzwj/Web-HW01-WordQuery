@@ -7,9 +7,6 @@
 ## 写在前面：第二次迭代
 * security：
 复用内置的login的html，在内存中创建了root的账户，使用自定义明码decoder，并拦截所有请求，登录后即可正常访问
-<div align="center">
-	<img src="./sample/login.JPG" width="550">
-</div>
 * actuator:
 进行了接口测试并且修改了相关配置
 * 第一次迭代：gitworkflow
@@ -47,9 +44,13 @@ mvnw clean test
 
 注：由于shakesphere.txt太大了，因此采取了Unlimited Blade Works作为demo文件。     
 再注： 并没有前端，所以输出也莫得了。只能直接访问api。
-1、在前端输入你想要查询的单词。   
-2、输出查询结果。     
-3、go to 1.   
+1、登录
+<div align="center">
+	<img src="./sample/login.JPG" width="550">
+</div>
+2、在前端输入你想要查询的单词。   
+3、输出查询结果json。     
+4、go to 2.   
 
 ### 项目结构
 
@@ -75,7 +76,7 @@ mvnw clean test
 
 ### 程序测试
 
-本程序对处理逻辑的Judger与Resolver进行了测试，结果与预期一致。单元测试未改变。
+本程序对处理逻辑的Judger与Resolver进行了测试，结果与预期一致。
 <div align="center">
 	<img src="./sample/test.jpg" width="550">
 </div>
