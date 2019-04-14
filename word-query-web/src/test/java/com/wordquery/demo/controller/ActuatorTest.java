@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 
@@ -34,20 +35,20 @@ public class ActuatorTest {
     MockMvc mockMvc;
     @Autowired
     protected WebApplicationContext wac;
-    @Autowired
-    WordQueryController wqController;
 
 
     @Before
     public void setup() throws Exception {
-        this.mockMvc = standaloneSetup(this.wqController).build();
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
-
+    //内容测试
     @Test
     public void health(){
         try {
             mockMvc.perform(get("/actuator/health").contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isOk()).andDo(print());
+                    .andExpect(status().isOk()).
+                    andExpect((ResultMatcher) jsonPath("$.status",is("UP"))).
+                    andDo(print());
         }
         catch (java.lang.Exception e) {
             System.out.println(e.getMessage());
@@ -57,12 +58,16 @@ public class ActuatorTest {
     public void info(){
         try {
             mockMvc.perform(get("/actuator/info").contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isOk()).andDo(print());
+                    .andExpect(status().isOk()).
+                    andExpect((ResultMatcher) jsonPath("$.name",is("wq"))).
+                    andExpect((ResultMatcher) jsonPath("$.version",is("π"))).
+                    andDo(print());
         }
         catch (java.lang.Exception e) {
             System.out.println(e.getMessage());
         }
     }
+    //东西太多了不知道咋测试
     @Test
     public void conditions(){
         try {
@@ -73,6 +78,7 @@ public class ActuatorTest {
             System.out.println(e.getMessage());
         }
     }
+    //东西太多了不知道咋测试
     @Test
     public void beans(){
         try {
