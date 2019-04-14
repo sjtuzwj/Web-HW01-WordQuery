@@ -7,6 +7,9 @@
 ## 写在前面：第二次迭代
 * security：
 复用内置的login的html，在内存中创建了root的账户，使用自定义明码decoder，并拦截所有请求，登录后即可正常访问
+<div align="center">
+	<img src="./sample/login.JPG" width="550">
+</div>
 * actuator:
 进行了接口测试并且修改了相关配置
 * 第一次迭代：gitworkflow
@@ -78,6 +81,9 @@ mvnw clean test
 </div>
 此外，通过mockMVC，对于接口进行了集成测试。测试了状态，内容等一系列正常
 
+<div align="center">
+	<img src="./sample/apitest.JPG" width="550">
+</div>
 ## 依赖
 
 JB idea 2018.3  
