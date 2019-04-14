@@ -43,14 +43,14 @@ mvnw clean test
 ```
 
 注：由于shakesphere.txt太大了，因此采取了Unlimited Blade Works作为demo文件。     
-再注： 并没有前端，所以输出也莫得了。只能直接访问api。
-1、登录
+再注： 并没有前端，所以输出也莫得了。只能直接访问api。      
+1、登录   
 <div align="center">
 	<img src="./sample/login.JPG" width="550">
 </div>
-2、在前端输入你想要查询的单词。   
-3、输出查询结果json。     
-4、go to 2.   
+2、在前端输入你想要查询的单词。    
+3、输出查询结果json。       
+4、go to 2.     
 
 ### 项目结构
 
