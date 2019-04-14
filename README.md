@@ -55,7 +55,7 @@ mvnw clean test
 * Judger负责判断单词的性质，持有两个方法，分别判断单词是否为数字，单词是否为新文章标识符。  
 * Resolver负责对于单词进行解析重组，持有两个方法，分别将单词的标点进行清洗，行拆分为单词组。  
 * WordQuery负责程序主体，持有三个方法，构造函数进行文本读取，其余分别处理程序的交互部分与查询部分。
-* QueryResult负责存储和序列化程序输出。输出格式为word+ context数组+ time
+* QueryResult负责存储和序列化程序输出的容器。格式为word+ context数组+ time
 
 ### 程序测试
 
@@ -63,7 +63,7 @@ mvnw clean test
 <div align="center">
 	<img src="./sample/test.jpg" width="550">
 </div>
-此外，通过mockMVC，对于接口进行了集成测试
+此外，通过mockMVC，对于接口进行了集成测试。测试了状态，内容等一系列正常
 
 ## 依赖
 
