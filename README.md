@@ -33,7 +33,7 @@
 10 
 12 
 10       
-[!avatar](pic/MQ.JPG)
+[!avatar](sample/MQ.JPG)
 可以看出，尽管Consumer的处理能力不及Producer，导致队列长度迅速上升，但最终队列长度稳定在10-12波动。
 
 ## Compare
