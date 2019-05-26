@@ -3,8 +3,8 @@
 - Message类包含了创建时间与处理所需时间的字段。仿真实际情况下每个request所需的时间。
 - MessageQueue类存储消息队列，当队列长度达到阈值后转为Stack，队列中如超时，则移除此message
 - Consumer：4个consumer，每秒生成一个处理时间为2秒的message
-- Producer：3个producer，持有message，当message被处理后，置message为空。
-- TimeCounter： 计时器，每秒钟consumer与producer并行处理，模拟多线程。
+- Producer：3个producer，持有message，当message被处理后，置message为空进入闲置状态。
+- TimeCounter： 计时器，每秒钟consumer与producer并行处理，模拟多线程。producer向队列中加入message，consumer如处于闲置状态，则从队列中取出消息进行处理。
 
 ## Result
 基于上述规则，我记录了队列长度的变化趋势如下：   
@@ -33,6 +33,7 @@
 10 
 12 
 10       
+[!avatar](pic/MQ.JPG)
 可以看出，尽管Consumer的处理能力不及Producer，导致队列长度迅速上升，但最终队列长度稳定在10-12波动。
 
 ## Compare
