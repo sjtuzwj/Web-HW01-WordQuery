@@ -21,7 +21,10 @@ import com.wordquery.demo.java.WordQuery;
 @RequestMapping(value="/wordquery")
 public class WordQueryController {
     @RequestMapping(value="/search/{input}",method= RequestMethod.GET)
-    public QueryResult search(@PathVariable String input){
+    public QueryResult search(@PathVariable String input,Username u,password p){
+        String Url="localhost:8000/login?Username={1}&password={2}";
+        Boolean login=restTemplate.getForObject(Url, Boolean.class,u,p);
+        if(!login) return null;
         WordQuery query = null;
         ClassPathResource dictPath = new ClassPathResource("demo.txt");
         try{
